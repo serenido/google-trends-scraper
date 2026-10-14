@@ -2,7 +2,7 @@ import { ApifyClient } from "apify-client";
 
 const client = new ApifyClient({ token: process.env.APIFY_TOKEN });
 
-const run = await client.actor("teegemspod/google-trends-reliable").call({
+const run = await client.actor("serenido/google-trends-reliable").call({
     "searchTerms": [
         "gym wear",
         "vw golf"
