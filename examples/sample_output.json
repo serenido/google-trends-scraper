@@ -1,0 +1,16 @@
+[
+  {
+    "type": "keyword",
+    "keyword": "gym wear",
+    "geo": "US",
+    "averageInterest": 68.8,
+    "latestInterest": 57,
+    "peakInterest": 100,
+    "peakDate": "2026-04-12",
+    "trendChangePct": 16,
+    "trendDirection": "rising",
+    "topRegions": "Wyoming (100), Kansas (52), Hawaii (43), California (37) ...",
+    "topQueries": "best gym wear, what to wear to the gym, gym wear women ...",
+    "risingQueries": "cheap womens gym wear (+250%), women's gym wear (+200%), cheap gym wear (+70%) ..."
+  }
+]
