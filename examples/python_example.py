@@ -13,5 +13,5 @@ run = client.actor("serenido/google-trends-reliable").call(run_input={
     "timeRange": "past_12_months"
 })
 
-for item in client.dataset(run["defaultDatasetId"]).iterate_items():
+for item in client.dataset(run.default_dataset_id).iterate_items():
     print(item)
