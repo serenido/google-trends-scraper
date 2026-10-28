@@ -4,14 +4,14 @@ Get Google Trends data for any list of keywords: interest over time, rising and 
 
 Runs in the cloud on Apify. No servers, no proxy setup, no code to maintain. **[Open it on Apify](https://apify.com/serenido/google-trends-reliable)**
 
-**Price:** $1 per 1,000 results (one result = one keyword or one Trending Now search). No monthly fee. Apify's free plan gives $5 of usage every month, no credit card needed. [Current price](https://apify.com/serenido/google-trends-reliable/pricing).
+**Price:** $1 per 1,000 results (one result = one keyword, or one Trending Now trend). Trending Now saves 25 trends per country unless you change `trendingNowMaxPerCountry` (0 = the whole list). No monthly fee. Apify's free plan gives $5 of usage every month, no credit card needed. [Current price](https://apify.com/serenido/google-trends-reliable/pricing).
 
 ## What you get
 
-- Interest over time with a ready summary (average, latest, peak, change in %)
+- Interest over time with a ready summary (average, latest, peak, change in %), plus the exact peak hour for short time ranges
 - Rising (breakout) and top related queries
 - Interest by region
-- Trending Now for any country, with traffic and news links
+- Trending Now for any country: the full list like trends.google.com/trending, in the same order, with search volume, growth, trend breakdown, topics and news links (past 4 hours, 24 hours, 48 hours or 7 days)
 - Web, YouTube, News, Images and Shopping search, any country and time range
 
 ## Quick start: Python
@@ -101,7 +101,7 @@ Any app that supports remote MCP servers (Claude, ChatGPT, Cursor, VS Code and o
 }
 ```
 
-Add `"trendingNowGeos": ["US", "GB"]` to also get today's trending searches. All options are listed on the [input page](https://apify.com/serenido/google-trends-reliable/input-schema).
+Add `"trendingNowGeos": ["US", "GB"]` to also get the trending searches of those countries. `"trendingNowHours"` picks the time window ("4", "24", "48" or "168") and `"trendingNowMaxPerCountry"` how many trends to save (default 25, 0 = all). All options are listed on the [input page](https://apify.com/serenido/google-trends-reliable/input-schema).
 
 ## Output example (one row)
 
@@ -121,6 +121,31 @@ Add `"trendingNowGeos": ["US", "GB"]` to also get today's trending searches. All
   "risingQueries": "cheap womens gym wear (+250%), women's gym wear (+200%), cheap gym wear (+70%) ..."
 }
 ```
+
+## Trending Now example (one row)
+
+Rows come in the same order as the Trending Now page ("By relevance").
+
+```json
+{
+  "type": "trendingNow",
+  "geo": "US",
+  "timeWindowHours": 24,
+  "rank": 3,
+  "keyword": "pistons vs knicks",
+  "searchVolume": 100000,
+  "approxTraffic": "100K+",
+  "volumeGrowthPct": 1000,
+  "startedAt": "2026-10-27T22:20:00Z",
+  "endedAt": null,
+  "isActive": true,
+  "relatedSearches": "knicks vs pistons, pistons, detroit pistons, pistons vs knicks where to watch ...",
+  "topics": "Sports",
+  "newsHeadlines": "Pistons vs. Knicks preview: 3-0 Pistons take on 0-3 Knicks | ..."
+}
+```
+
+A keyword can show up twice when it trended twice in the time window, like on the page. Each row has its own `startedAt`.
 
 Download as JSON, CSV or Excel, or connect to Make, Zapier or n8n.
 

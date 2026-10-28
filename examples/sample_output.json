@@ -12,5 +12,21 @@
     "topRegions": "Wyoming (100), Kansas (52), Hawaii (43), California (37) ...",
     "topQueries": "best gym wear, what to wear to the gym, gym wear women ...",
     "risingQueries": "cheap womens gym wear (+250%), women's gym wear (+200%), cheap gym wear (+70%) ..."
+  },
+  {
+    "type": "trendingNow",
+    "geo": "US",
+    "timeWindowHours": 24,
+    "rank": 3,
+    "keyword": "pistons vs knicks",
+    "searchVolume": 100000,
+    "approxTraffic": "100K+",
+    "volumeGrowthPct": 1000,
+    "startedAt": "2026-10-27T22:20:00Z",
+    "endedAt": null,
+    "isActive": true,
+    "relatedSearches": "knicks vs pistons, pistons, detroit pistons, pistons vs knicks where to watch ...",
+    "topics": "Sports",
+    "newsHeadlines": "Pistons vs. Knicks preview: 3-0 Pistons take on 0-3 Knicks | ..."
   }
 ]
